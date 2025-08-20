@@ -9,12 +9,16 @@ pipeline {
         timeout(time: 30, unit: 'MINUTES') // Pipeline will abort after 1 hour
         disableConcurrentBuilds()
     }
+    parameters {
+        string(name: 'Ramesh', defaultValue: '1.0.0', description: 'Specify the build version')
+        booleanParam(name: 'RUN_TESTS', defaultValue: true, description: 'Run unit tests?')
+    }
     stages {
         stage('Build') {
             steps {
                 script {
                     echo "Building.."
-                    sleep 30
+                    echo "Hello,${params.name}"
                 }
                 
             }
