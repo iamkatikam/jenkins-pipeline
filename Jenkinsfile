@@ -10,7 +10,7 @@ pipeline {
         disableConcurrentBuilds()
     }
     parameters {
-        string(name: 'Ramesh', defaultValue: '1.0.0', description: 'Specify the build version')
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Specify the jenkins user name')
         booleanParam(name: 'RUN_TESTS', defaultValue: true, description: 'Run unit tests?')
     }
     stages {
