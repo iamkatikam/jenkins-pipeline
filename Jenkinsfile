@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                        echo "Hello from Test.."
+                        echo "Hello from Test stage.."
                         env
                     """
                 }
