@@ -18,5 +18,17 @@ pipeline {
                 echo "Deploying.."
             }
         }
+    }
+    post {
+        always {
+            echo "I will always say Hello.."
+            deleteDir()
+        }
+        success {
+            echo "Hello SUCCESS.."
+        }
+        failure {
+            echo "Hello FAILURE..."
+        }
     }    
 }
