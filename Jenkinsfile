@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     echo "Building.."
-                    echo "Hello,${params.Ramesh}"
+                    echo "Hello,${params.PERSON}"
                 }
                 
             }
