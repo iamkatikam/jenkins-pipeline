@@ -5,11 +5,15 @@ pipeline {
     environment {
         COURSE = 'Jenkins'
     }
+    options {
+        timeout(time: 10, unit: 'SECONDS') // Pipeline will abort after 1 hour
+    }
     stages {
         stage('Build') {
             steps {
                 script {
                     echo "Building.."
+                    sleep 10
                 }
                 
             }
