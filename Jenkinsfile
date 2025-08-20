@@ -6,14 +6,15 @@ pipeline {
         COURSE = 'Jenkins'
     }
     options {
-        timeout(time: 10, unit: 'SECONDS') // Pipeline will abort after 1 hour
+        timeout(time: 30, unit: 'MINUTES') // Pipeline will abort after 1 hour
+        disableConcurrentBuilds()
     }
     stages {
         stage('Build') {
             steps {
                 script {
                     echo "Building.."
-                    sleep 10
+                    sleep 30
                 }
                 
             }
