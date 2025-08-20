@@ -2,6 +2,9 @@ pipeline {
     agent {
         label 'AGENT-1'
     }
+    environment {
+        COURSE = 'Jenkins'
+    }
     stages {
         stage('Build') {
             steps {
@@ -13,7 +16,13 @@ pipeline {
         }
         stage('Test'){
             steps {
-                echo "Testing.."
+                script {
+                    sh """
+                        echo "Hello from Test.."
+                        env
+                    """
+                }
+                
             }
         }
         stage('Deploy') {
